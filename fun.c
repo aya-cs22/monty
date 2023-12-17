@@ -18,8 +18,9 @@ void free_stack(stack_t **stack)
 	*stack = NULL;
 }
 /**
- * add_to_stack - adds a new node to the stack
- * @new_node: new node to be added
+ * _push - adds a new node to the stack
+ * @head: new node to be added
+ * @line: line number
  * Return: nothing
  */
 void _push(stack_t **head, unsigned int line)
@@ -32,14 +33,14 @@ void _push(stack_t **head, unsigned int line)
 	arg = strtok(NULL, " \t\n");
 	if (arg == NULL)
 	{
-		fprintf(stderr,"L%d: usage: push integer\n",line);
+		fprintf(stderr, "L%d: usage: push integer\n", line);
 		exit(EXIT_FAILURE);
 	}
 	while (arg[i] != '\0')
 	{
 		if (arg[i] != '-' && !isdigit(arg[i]))
 		{
-			fprintf(stderr,"L%d: usage: push integer\n",line);
+			fprintf(stderr, "L%d: usage: push integer\n", line);
 			exit(EXIT_FAILURE);
 		}
 		i++;
@@ -47,14 +48,14 @@ void _push(stack_t **head, unsigned int line)
 	temp = malloc(sizeof(stack_t));
 	if (temp == NULL)
 	{
-		fprintf(stderr,"L%d: usage: push integer\n",line);
+		fprintf(stderr, "L%d: usage: push integer\n", line);
 		exit(EXIT_FAILURE);
 	}
 	temp->n = 0;
 	if (arg != NULL)
 		temp->n = atoi(arg);
 	temp->next = *head;
-	if(*head)
+	if (*head)
 	{
 		(*head)->prev = temp;
 	}
@@ -64,6 +65,7 @@ void _push(stack_t **head, unsigned int line)
 /**
  * _pall - prints the stack
  * @head: head of the stack
+ * @line: line number
  * Return: nothing
 */
 void _pall(stack_t **head, unsigned int line)
@@ -78,7 +80,7 @@ void _pall(stack_t **head, unsigned int line)
 	}
 	while (temp)
 	{
-		printf("%d\n",temp->n);
+		printf("%d\n", temp->n);
 		temp = temp->next;
 	}
 }
