@@ -68,7 +68,7 @@ void _add(stack_t **head, unsigned int line)
 {
 	if (stack_size(*head) < 2)
 	{
-		fprintf(stderr, "L%u: not enough arguments for add\n", line);
+		fprintf(stderr, "L%u: can't add, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 	stack_t *tmp = stack_pop(head);
