@@ -37,7 +37,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void _push(stack_t **head,unsigned int line);
+void _push(stack_t **head, unsigned int line);
 int execute(char *content, unsigned int counter, stack_t **ptr_first_node);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 void _pall(stack_t **head, unsigned int line);

@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
-* execute - Executes an opcode on a stack.
-* @line: The line containing the opcode to execute.
-* @line_number: The line number of the opcode in the input file.
-* @stack: A pointer to the top of the stack.
-* Return: 0 if the opcode is a comment or if the line is empty, 1 otherwise.
+* execute - executes the program
+* @content: the program
+* @counter: the line number
+* @ptr_first_node: pointer to the first node of the stack
+* Return: 1 if success, 0 if error
 */
 int execute(char *content, unsigned int counter, stack_t **ptr_first_node)
 {
