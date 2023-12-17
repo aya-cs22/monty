@@ -59,25 +59,6 @@ void _swap(stack_t **head, unsigned int line)
 	(*head) = temp;
 }
 /**
- * _add - adds two numbers
- * @head: head of the stack
- * @line: line number
- * Return: nothing
- */
-void _add(stack_t **head, unsigned int line)
-{
-	if (stack_size(*head) < 2)
-	{
-		fprintf(stderr, "L%u: can't add, stack too short\n", line);
-		exit(EXIT_FAILURE);
-	}
-	stack_t *tmp = stack_pop(head);
-	stack_t *tmp2 = stack_pop(head);
-	stack_push(head, stack_add(tmp, tmp2));
-	stack_free(tmp);
-	stack_free(tmp2);
-}
-/**
  * _nop - does nothing
  * @head: head of the stack
  * @line: line number
