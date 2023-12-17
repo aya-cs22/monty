@@ -50,7 +50,9 @@ void _push(stack_t **head, unsigned int line)
 		fprintf(stderr,"L%d: usage: push integer\n",line);
 		exit(EXIT_FAILURE);
 	}
-	temp->n = atoi(arg);
+	temp->n = 0;
+	if (arg != NULL)
+		temp->n = atoi(arg);
 	temp->next = *head;
 	if(*head)
 	{
