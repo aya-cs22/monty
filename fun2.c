@@ -77,12 +77,16 @@ void _nop(stack_t **head, unsigned int line)
  */
 void _add(stack_t **head, unsigned int line)
 {
+	int sum;
+
 	if (head == NULL || *head == NULL || (*head)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
-	(*head)->n += (*head)->next->n;
+	(*head) = (*head)->next;
+	sum = (*head)->n + (*head)->prev->n;
+	(*head)->n = sum;
 	free((*head)->prev);
 	(*head)->prev = NULL;
 }
