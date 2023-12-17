@@ -77,4 +77,15 @@ void _add(stack_t **head, unsigned int line)
 	stack_free(tmp);
 	stack_free(tmp2);
 }
+/**
+ * _nop - does nothing
+ * @head: head of the stack
+ * @line: line number
+ * Return: nothing
+*/
+void _nop(stack_t **head, unsigned int line)
+{
+	(void)head;
+	(void)line;
+}
 
