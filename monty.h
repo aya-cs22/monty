@@ -43,4 +43,5 @@ ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 void _pall(stack_t **head, unsigned int line);
 void free_stack(stack_t **stack);
 void _pint(stack_t **head, unsigned int line);
+void _pop(stack_t **head, unsigned int line);
 #endif
