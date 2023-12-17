@@ -69,4 +69,20 @@ void _nop(stack_t **head, unsigned int line)
 	(void)head;
 	(void)line;
 }
-
+/**
+ * _add - adds two numbers
+ * @head: head of the stack
+ * @line: line number
+ * Return: nothing
+ */
+void _add(stack_t **head, unsigned int line)
+{
+	if (head == NULL || *head == NULL || (*head)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't add, stack too short\n", line);
+		exit(EXIT_FAILURE);
+	}
+	(*head)->n += (*head)->next->n;
+	free((*head)->prev);
+	(*head)->prev = NULL;
+}
