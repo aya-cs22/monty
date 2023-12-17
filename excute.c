@@ -11,6 +11,7 @@ int execute(char *content, unsigned int counter, stack_t **ptr_first_node)
 	instruction_t opcodes[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
 		{NULL, NULL}
 	};
 	int i = 0;
