@@ -13,6 +13,7 @@ int execute(char *content, unsigned int counter, stack_t **ptr_first_node)
 		{"pall", _pall},
 		{"pint", _pint},
 		{"pop", _pop},
+		{"swap", _swap},
 		{NULL, NULL}
 	};
 	int i = 0;

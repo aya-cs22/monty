@@ -38,3 +38,23 @@ void _pop(stack_t **head, unsigned int line)
 	}
 	free(temp);
 }
+/**
+ * _swap - swap the top two elements of the stack
+ * @head: head of the stack
+ * @line: line number
+ * Return: nothing
+ */
+void _swap(stack_t **head, unsigned int line)
+{
+	stack_t *temp;
+
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't swap, stack has less than 2 elements\n", line);
+		exit(EXIT_FAILURE);
+	}
+	temp = (*head)->next;
+	(*head)->next = (*head)->next->next;
+	temp->next = (*head);
+	(*head) = temp;
+}
