@@ -47,6 +47,7 @@ void _pop(stack_t **head, unsigned int line)
 void _swap(stack_t **head, unsigned int line)
 {
 	stack_t *temp;
+	int data = 0;
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
@@ -77,8 +78,8 @@ void _nop(stack_t **head, unsigned int line)
  */
 void _add(stack_t **head, unsigned int line)
 {
-	int sum = 0;
-
+	int sum;
+	(void)sum;
 	if (*head == NULL || (*head)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n", line);
