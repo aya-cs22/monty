@@ -81,7 +81,7 @@ void _add(stack_t **head, unsigned int line)
 	int sum = 0;
 	stack_t *temp;
 
-	if (*head == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n", line);
 		exit(EXIT_FAILURE);
