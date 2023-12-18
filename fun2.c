@@ -53,10 +53,10 @@ void _swap(stack_t **head, unsigned int line)
 		fprintf(stderr, "L%u: can't swap, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
-	temp = (*head)->next;
-	(*head)->next = (*head)->next->next;
-	temp->next = (*head);
-	(*head) = temp;
+	temp = (*head);
+	data = temp->n;
+	temp->n = temp->next->n;
+	temp->next->n = data;
 }
 /**
  * _nop - does nothing
@@ -85,8 +85,8 @@ void _add(stack_t **head, unsigned int line)
 		exit(EXIT_FAILURE);
 	}
 	(*head) = (*head)->next;
-	sum = (*head)->n + (*head)->prev->n;
-	(*head)->n = sum;
+	sum = (*head)->n + (*head)->next->n;
+	(*head) = (*head)->next;
 	free((*head)->prev);
 	(*head)->prev = NULL;
 }
