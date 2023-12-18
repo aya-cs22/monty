@@ -87,9 +87,9 @@ void _add(stack_t **head, unsigned int line)
 		exit(EXIT_FAILURE);
 	}
 	sum = (*head)->n + (*head)->next->n;
-	temp = (*head)->next;
-	(*head)->next = temp->next;
-	temp->next->prev = (*head);
+	temp = (*head);
+	(*head) = temp->next;
+	(*head)->prev = NULL;
 	(*head)->n = sum;
-	free (temp);
+	free(temp);
 }
